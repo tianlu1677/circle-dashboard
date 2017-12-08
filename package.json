@@ -62,8 +62,10 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "devDependencies": {
+    "node-sass": "^4.7.2",
     "redux-devtools-extension": "^2.13.2",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "sass-loader": "^6.0.6"
   },
   "jest": {
     "collectCoverageFrom": [
