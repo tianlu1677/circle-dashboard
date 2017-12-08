@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Route, Switch } from 'react-router'
+import Home from './containers/Home'
+import BlankLayout from '../../layouts/BlankLayout'
 
-class Home extends Component {
+class HomeRoute extends Component {
   render() {
     return (
-      <div>Hello</div>
+      <div>
+        <Switch>                
+        <Route component={BlankLayout} />
+          <Route exact path="/home" component={Home}></Route>
+          <Route path="/dashboard" render={() => <h1>uuu</h1> }></Route>
+        </Switch>
+      </div>
     );
   }
 }
 
-export default Home;
+export default HomeRoute;

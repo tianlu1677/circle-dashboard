@@ -6,19 +6,16 @@ import { Route, Switch } from 'react-router'
 import createHistory from 'history/createBrowserHistory'
 
 import configureStore from './app/store/createStore'
-import Home from './app/routes/home/index'
+import RootRoutes from './app/routes/Root'
 
 class App extends Component {
   
   render() {
-    const history = createHistory()
-    const dashboardRouterMiddleware = routerMiddleware(history)
+    
     const dashboardStore = configureStore()
-    return (
+    return(
       <Provider store={dashboardStore}>
-        <ConnectedRouter history={history}>
-          <Route path="/home" component={ Home }></Route>
-        </ConnectedRouter>
+         <RootRoutes />
       </Provider>
     );
   }
