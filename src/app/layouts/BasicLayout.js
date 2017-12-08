@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Layout, Menu, Icon, Avatar, Dropdown, Tag, message, Spin } from 'antd';
 import DocumentTitle from 'react-document-title';
-import { connect } from 'redux';
+import { connect } from 'react-redux';
 import { Route, Redirect, Switch } from 'react-router';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
@@ -13,6 +13,8 @@ import classNames from 'classnames';
 // import Debounce from 'lodash-decorators/debounce';
 
 import IndexRoutes from '../routes/index'
+import style from './BasicLayout.css'
+
 const { Header, Sider, Content, Footer } = Layout;
 const { SubMenu } = Menu;
 const MenuItem = Menu.Item;
@@ -69,7 +71,7 @@ class BasicLayout extends Component {
           breakpoint="md"
           width="256"          
         >
-          <div className="">
+          <div className={style.header}>
             <Link to="/">
               <img src="" alt=""/>
               <h1>Circle-Dashboard</h1>
@@ -113,7 +115,7 @@ class BasicLayout extends Component {
 
         </Sider>
         <Layout>
-          <Header>
+          <Header className={''}>
             <Icon className="" type="menu-unfold"></Icon>
             <Dropdown overlay={menu}>
               <span className={''}>
@@ -130,7 +132,7 @@ class BasicLayout extends Component {
           </Content>
           <Footer>
             <div>
-              Copyright <Icon type="copyright" /> 2017 蚂蚁金服体验技术部出品
+              Copyright <Icon type="copyright" /> 2017 创投圈
             </div>
           </Footer>
         </Layout>
@@ -139,10 +141,17 @@ class BasicLayout extends Component {
   
     return (
       <DocumentTitle title="dashboar">
+      <div>        
         {layout}
+      </div>
+        
+
       </DocumentTitle>              
     );
   }
 }
 
-export default BasicLayout;
+export default connect(state => ({
+  currentUser: {name: 'zhangsan'},
+  collapsed: true
+}))(BasicLayout);

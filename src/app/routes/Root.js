@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { ConnectedRouter, routerMiddleware} from 'react-router-redux';
-import { Link } from 'react-router-dom';
-import { Route, Switch } from 'react-router';
+import { Route } from 'react-router';
 import createHistory from 'history/createBrowserHistory';
 
-import { LocaleProvider, Spin } from 'antd';
+import { LocaleProvider} from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 
 
-import HomeRoute from './home/index'
 import BasicLayout from '../layouts/BasicLayout'
 
 class RootRoutes extends Component {
