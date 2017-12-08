@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router'
 import Home from './containers/Home'
-import BlankLayout from '../../layouts/BlankLayout'
 
 class HomeRoute extends Component {
   render() {
