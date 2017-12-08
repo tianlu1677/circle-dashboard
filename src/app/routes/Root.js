@@ -9,7 +9,7 @@ import zhCN from 'antd/lib/locale-provider/zh_CN';
 
 
 import HomeRoute from './home/index'
-import BlankLayout from '../layouts/BlankLayout'
+import BasicLayout from '../layouts/BasicLayout'
 
 class RootRoutes extends Component {
   render() {
@@ -18,8 +18,8 @@ class RootRoutes extends Component {
     
     return(
       <LocaleProvider locale={zhCN}>
-        <ConnectedRouter history={history}>        
-          <HomeRoute />
+        <ConnectedRouter history={history}>          
+          <Route path="/" render={props => <BasicLayout {...props}></BasicLayout>} />
         </ConnectedRouter>  
       </LocaleProvider>
       

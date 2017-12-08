@@ -7,8 +7,7 @@ class HomeRoute extends Component {
   render() {
     return (
       <div>
-        <Switch>                
-        <Route component={BlankLayout} />
+        <Switch>                        
           <Route exact path="/home" component={Home}></Route>
           <Route path="/dashboard" render={() => <h1>uuu</h1> }></Route>
         </Switch>
