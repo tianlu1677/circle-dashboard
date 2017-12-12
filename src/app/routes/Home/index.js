@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router'
 import Home from './containers/Home'
 
-class HomeRoute extends Component {
+class Index extends Component {
   render() {
     return (
       <div>
@@ -15,4 +15,4 @@ class HomeRoute extends Component {
   }
 }
 
-export default HomeRoute;
+export default Index;
